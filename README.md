@@ -1,6 +1,6 @@
 Backbone Prototype.js is an adapter for using Backbone with the Prototype.js framework. The 
-basic idea behind it is to use the jQuery API as a wrapper to Prototype calls to allow us to 
-seamlessly use Backbone.js without changing its internals.
+basic idea behind it is to use a jQuery-like API as a wrapper to Prototype calls to allow us 
+to seamlessly use Backbone.js without changing its internals.
 
 **Idea, documentation, code structure and implementation are simply a modified version of 
 the excelent mootools adapter (https://github.com/inkling/backbone-mootools).**
@@ -19,10 +19,6 @@ For example:
 ## Dependencies
 
 This adapter has been tested with the lastest stable prototypejs release (1.7).
-
-## Contributors
-
- * Sebastian Zaha
 
 ## Supported Libraries
 

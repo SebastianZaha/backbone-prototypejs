@@ -24,8 +24,8 @@
  */
 
 /*
- * This file provides a basic jQuery to Prototype.js Adapter. It allows us to run Backbone.js
- * with minimal modifications.
+ * This file provides a basic Prototype.js Adapter. It allows us to run Backbone.js with minimal
+ *  modifications.
  */
 (function(window) {
     var PrototypeAdapter = Class.create({
@@ -299,22 +299,21 @@
 
 
     /**
-     * JQuery Selector Methods
+     * Selector Methods
      *
-     * jQuery(html) - Returns an HTML element wrapped in a PrototypeAdapter.
-     * jQuery(expression) - Returns a PrototypeAdapter containing an element set corresponding the
-     *     elements selected by the expression.
-     * jQuery(expression, context) - Returns a PrototypeAdapter containing an element set corresponding
-     *     to applying the expression in the specified context.
-     * jQuery(element) - Wraps the provided element in a PrototypeAdapter and returns it.
+     * domLibraryAdapter(html) - Returns an HTML element wrapped in a PrototypeAdapter.
+     * domLibraryAdapter(expression) - Returns a PrototypeAdapter containing an element set 
+     *     corresponding to the elements selected by the expression.
+     * domLibraryAdapter(expression, context) - Returns a PrototypeAdapter containing an element
+     *     set corresponding to applying the expression in the specified context.
+     * domLibraryAdapter(element) - Wraps the provided element in a PrototypeAdapter and returns it.
      *
-     * @return PrototypeAdapter an adapter element containing the selected/constructed
-     *     elements.
+     * @return PrototypeAdapter an adapter element containing the selected/constructed elements.
      */
     domLibraryAdapter = function(expression, context) {
         var elements;
 
-        // Handle jQuery(html).
+        // Handle domLibraryAdapter(html).
         if (typeof expression === 'string' && !context) {
             if (expression.charAt(0) === '<' && expression.charAt(expression.length - 1) === '>') {
                 elements = [new Element('div').update(expression).down()];
@@ -322,24 +321,24 @@
             }
         } else if (typeof expression == 'object') {
             if (expression instanceof PrototypeAdapter) {
-                // Handle jQuery(PrototypeAdapter)
+                // Handle domLibraryAdapter(PrototypeAdapter)
                 return expression;
             } else {
-                // Handle jQuery(element).
+                // Handle domLibraryAdapter(element).
                 return new PrototypeAdapter([expression]);
             }
         }
 
-        // Handle jQuery(expression) and jQuery(expression, context).
+        // Handle domLibraryAdapter(expression) and domLibraryAdapter(expression, context).
         context = context || document;
         elements = Element.select(context, expression);
         return new PrototypeAdapter(elements);
     };
 
     /*
-     * jQuery.ajax
+     * domLibraryAdapter.ajax
      *
-     * Maps a jQuery ajax request to a Prototype Request and sends it.
+     * Maps a domLibraryAdapter ajax request to a Prototype Request and sends it.
      */
     domLibraryAdapter.ajax = function(params) {
         var parameters = {
