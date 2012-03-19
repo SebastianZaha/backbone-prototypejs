@@ -7,14 +7,14 @@ the excelent mootools adapter (https://github.com/inkling/backbone-mootools).**
 
 ## Usage
 
-To use backbone-prototypejs download PrototypeAdapter.js and embed it before the 
+To use backbone-prototypejs download prototype_adapter.js and embed it before the 
 backbone.js include.
 
 For example:
 
     <script src="http://www.yourwebsite.com/prototypejs-1.7.js>
     <script src="http://www.yourwebsite.com/backbone.js"></script>
-    <script src="http://www.yourwebsite.com/PrototypeAdapter.js"></script>
+    <script src="http://www.yourwebsite.com/prototype_adapter.js"></script>
 
 ## Dependencies
 
